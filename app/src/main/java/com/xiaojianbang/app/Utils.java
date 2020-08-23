@@ -1,6 +1,40 @@
 package com.xiaojianbang.app;
 
 public class Utils {
+    public static int getCalc(int a, int b){
+        return a + b;
+    }
+
+    public static int _getCalc(int a, int b, int c){
+        return a + b + c;
+    }
+
+    public static Money getMoney(){
+        return new Money("RMB", 100);
+    }
+    public static String test(){
+        return "资源共享吧";
+    }
+
+    public static String test(int num){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("www.zygx8.com");
+        stringBuilder.append(num);
+        return stringBuilder.toString();
+    }
+
+    public static String test(Money money){
+        return money.getInfo();
+    }
+
+    public String myPrint(String[] strArr){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(String str : strArr){
+            stringBuilder.append(str);
+        }
+        return stringBuilder.toString();
+    }
+
     public static String byteToHexString(byte[] by) {
         StringBuffer SB = new StringBuffer();
         for (byte b : by) {

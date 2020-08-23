@@ -20,9 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((Button) findViewById(R.id.helloFromC)).setOnClickListener(this);
-        ((Button) findViewById(R.id.add)).setOnClickListener(this);
-        ((Button) findViewById(R.id.MD5)).setOnClickListener(this);
+        ((Button) findViewById(R.id.JavaMD5)).setOnClickListener(this);
         ((Button) findViewById(R.id.SHA)).setOnClickListener(this);
         ((Button) findViewById(R.id.MAC)).setOnClickListener(this);
         ((Button) findViewById(R.id.DES)).setOnClickListener(this);
@@ -30,10 +28,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((Button) findViewById(R.id.AES)).setOnClickListener(this);
         ((Button) findViewById(R.id.RSA)).setOnClickListener(this);
         ((Button) findViewById(R.id.RSAHex)).setOnClickListener(this);
+        ((Button) findViewById(R.id.helloFromC)).setOnClickListener(this);
+        ((Button) findViewById(R.id.add)).setOnClickListener(this);
+
+        ((Button) findViewById(R.id.CMD5)).setOnClickListener(this);
+        ((Button) findViewById(R.id.showMap)).setOnClickListener(this);
+        ((Button) findViewById(R.id.putong)).setOnClickListener(this);
+        ((Button) findViewById(R.id.gouzao)).setOnClickListener(this);
+        ((Button) findViewById(R.id.chongzai)).setOnClickListener(this);
+        ((Button) findViewById(R.id.duixiang)).setOnClickListener(this);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("启动前打印：");
+        stringBuilder.append(Utils.getCalc(1000, 2000));
+        toastPrint(stringBuilder.toString());
 
         // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+    }
+
+    public void toastPrint(String toShowString) {
+        Toast.makeText(this, toShowString, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -45,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+//            String str = BuildConfig.FLAVOR;
             case R.id.helloFromC:
                 try {
                     Toast.makeText(this, NativeHelper.helloFromC(), Toast.LENGTH_SHORT).show();
@@ -61,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     e2.printStackTrace();
                     return;
                 }
-            case R.id.MD5:
+            case R.id.JavaMD5:
                 try {
                     //Toast.makeText(this, NativeHelper.encode("xiaojianbang"), Toast.LENGTH_SHORT).show();
                     Toast.makeText(this, MD5.md5_1("xiaojianbang"), Toast.LENGTH_SHORT).show();
@@ -126,9 +143,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     e8.printStackTrace();
                     return;
                 }
+            case R.id.chongzai:
+                toastPrint(Utils.test(666));
+                toastPrint(new Money(){
+                    public String getInfo(){
+                        return "匿名类被调用";
+                    }
+                }.getInfo());
+                return;
+            case R.id.duixiang:
+                toastPrint(Utils.test(new Money("美元", 200)));
+                toastPrint(new Utils().myPrint(new String[]{"资源共享吧", "官网", ":", "www.zygx8.com"}));
+                return;
+            case R.id.gouzao:
+                toastPrint(Utils.getMoney().getInfo());
+                toastPrint(new Money().name());
+                return;
+            case R.id.putong:
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(Utils.getCalc(2000, 2000));
+                stringBuilder.append("str");
+                toastPrint(stringBuilder.toString());
+                //toastPrint(new innerClass("资源吧", 666).outPrint());
+                return;
+            case R.id.showMap:
+                showMap_();
+                return;
             default:
                 return;
         }
 
+    }
+
+    private void showMap_() {
     }
 }

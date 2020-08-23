@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_margin="40dp">
 
     <TextView
         android:id="@+id/sample_text"
@@ -17,15 +18,58 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <Button android:id="@+id/helloFromC" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="helloFromC" />
-    <Button android:id="@+id/add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="add"/>
-    <Button android:id="@+id/MD5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MD5"/>
-    <Button android:id="@+id/SHA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SHA"/>
-    <Button android:id="@+id/MAC" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MAC"/>
-    <Button android:id="@+id/DES" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DES"/>
-    <Button android:id="@+id/DESede" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DESede"/>
-    <Button android:id="@+id/AES" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AES"/>
-    <Button android:id="@+id/RSA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSA"/>
-    <Button android:id="@+id/RSAHex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSAHex"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="10dp">
+        <Button android:id="@+id/JavaMD5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="JavaMD5" android:layout_marginHorizontal="20dp"/>
+
+        <Button
+            android:id="@+id/helloFromC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="helloFromC" android:layout_marginHorizontal="20dp" />
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/SHA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SHA" android:layout_marginHorizontal="20dp"/>
+        <Button android:id="@+id/add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="add" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/MAC" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MAC" android:layout_marginHorizontal="20dp"/>
+        <Button android:id="@+id/CMD5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CMD5" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/DES" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DES" android:layout_marginHorizontal="20dp"/>
+        <Button android:id="@+id/putong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="普通方法" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/AES" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AES" android:layout_marginHorizontal="20dp"/>
+        <Button android:id="@+id/gouzao" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="构造方法" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/DESede" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DESede" android:layout_marginHorizontal="20dp"/>
+        <Button android:id="@+id/chongzai" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="重载方法" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/RSA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSA" android:layout_marginHorizontal="20dp"/>
+        <Button android:id="@+id/duixiang" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="对象" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/RSAHex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RSAHex" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:padding="10dp">
+        <Button android:id="@+id/showMap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="showMap" android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+
+
 </LinearLayout>
 
